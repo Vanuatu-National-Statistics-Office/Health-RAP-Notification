@@ -24,6 +24,8 @@ library(reshape2)
 setwd(paste0(getwd()))
 getwd()
 
+
+
 #Establish connection the the SQLite database
 mydb <- dbConnect(RSQLite::SQLite(), "data/secure/sqlite/ndn.sqlite") 
 
@@ -39,8 +41,9 @@ dbWriteTable(mydb, "notification", notification, overwrite = TRUE)
 dbWriteTable(mydb, "int_actions", int_actions, overwrite = TRUE)
 dbWriteTable(mydb, "int_asmnt", int_asmnt, overwrite = TRUE)
 
-#Write the code to do all processing here before disconnecting the SQLite database
+### processing ####
 
+## Read in the data for Processing
 #1. Geography
 geography <- read.csv("C:/RAP/Health-RAP-Notification/other/ac.csv")   
 
@@ -106,6 +109,7 @@ colnames(notification)[52] <- 'Other_test_symp'
 
 dbWriteTable(mydb, "notification", notification, overwrite = TRUE)
 
+#### Tables for the notification form ####
 # 1. Total Number of Patients by Source of Health Notifications and by Area Council
 
 patients_ac <- dbGetQuery(mydb, "SELECT notification.province, geography.pname, notification.area_council, geography.acname, source_of_health.source, gender.gender, 
@@ -191,9 +195,9 @@ diseases_sex <- dbGetQuery(mydb, "SELECT notification.province, geography.pname,
 
 
 
-dbWriteTable(mydb, "diseases_sexpivot", diseases_sexpivot, overwrite=TRUE)
+dbWriteTable(mydb, "diseases_sex", diseases_sex, overwrite=TRUE)
 
-write.csv(diseases_sexpivot,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Diseases suspected by sex, area council and source of notifications.csv", row.names = FALSE)
+write.csv(diseases_sex,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Diseases suspected by area council and source of notifications.csv", row.names = FALSE)
 
 
 
@@ -210,14 +214,9 @@ covid_sex <- dbGetQuery(mydb, "SELECT notification.province, geography.pname, no
                                   ORDER BY geography.provid, geography.acid 
                                ") 
 
-covid_sexpivot <- covid_sex %>%
-  filter(COVID_19 != "NA") %>%
-  pivot_wider(names_from = gender, values_from = COVID_19, values_fill = 0) %>%
-  ungroup()
+dbWriteTable(mydb, "covid_sex", covid_sex, overwrite=TRUE)
 
-dbWriteTable(mydb, "covid_sexpivot", covid_sexpivot, overwrite=TRUE)
-
-write.csv(covid_sexpivot,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Diseases suspected  of COVID 19 by sex, area council and source of notifications.csv", row.names = FALSE)
+write.csv(covid_sex,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Diseases suspected  of COVID 19 by area council and source of notifications.csv", row.names = FALSE)
 
 
 
@@ -260,14 +259,11 @@ covid_undelying <- dbGetQuery(mydb, "SELECT notification.province, geography.pna
                                
                                ") 
 
-covid_sexOtherpivot <- covid_sexOther%>%
-  filter(population != "NA") %>%
-  pivot_wider(names_from = sex, values_from = population, values_fill = 0) %>%
-  ungroup()
 
-dbWriteTable(mydb, "covid_sexOtherpivot", covid_sexOtherpivot, overwrite=TRUE)
 
-write.csv(covid_sexOtherpivot,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Patients suspected of COVID and other diseases by sex, area council and source of notifications.csv", row.names = FALSE)
+dbWriteTable(mydb, "covid_undelying", covid_undelying, overwrite=TRUE)
+
+write.csv(covid_undelying,"C:\\Census 2020\\Population-Census-2020\\data\\open\\team1\\Table Number of Patients suspected of COVID and other diseases by area council and source of notifications.csv", row.names = FALSE)
 
 
 
