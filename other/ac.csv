@@ -1,0 +1,67 @@
+acid,acname,provid,pname,urid,urname
+101,torres,1,torba,2,rural
+102,ureparapara,1,torba,2,rural
+103,motalava,1,torba,2,rural
+104,vanua lava,1,torba,2,rural
+105,mota,1,torba,2,rural
+106,gaua,1,torba,2,rural
+107,merelava,1,torba,2,rural
+201,north west santo,2,sanma,2,rural
+202,north santo,2,sanma,2,rural
+203,west santo,2,sanma,2,rural
+204,south santo,2,sanma,2,rural
+205,east santo,2,sanma,2,rural
+206,south east santo,2,sanma,2,rural
+207,canal - fanafo,2,sanma,2,rural
+208,luganville,2,sanma,1,urban
+209,west malo,2,sanma,2,rural
+210,east malo,2,sanma,2,rural
+301,west ambae,3,penama,2,rural
+302,north ambae,3,penama,2,rural
+303,east ambae,3,penama,2,rural
+304,south ambae,3,penama,2,rural
+305,north maewo,3,penama,2,rural
+306,south maewo,3,penama,2,rural
+307,north pentecost,3,penama,2,rural
+308,central pentecost 1,3,penama,2,rural
+309,central pentecost 2,3,penama,2,rural
+310,south pentecost,3,penama,2,rural
+401,north west malekula,4,malampa,2,rural
+402,north east malekula,4,malampa,2,rural
+403,central malekula,4,malampa,2,rural
+404,south west malekula,4,malampa,2,rural
+405,south east malekula,4,malampa,2,rural
+406,south malekula,4,malampa,2,rural
+407,north ambrym,4,malampa,2,rural
+408,west ambrym,4,malampa,2,rural
+409,south east ambrym,4,malampa,2,rural
+410,paama,4,malampa,2,rural
+501,vermali,5,shefa,2,rural
+502,vermaul,5,shefa,2,rural
+503,varisu,5,shefa,2,rural
+504,south epi,5,shefa,2,rural
+505,north tongoa,5,shefa,2,rural
+506,tongariki,5,shefa,2,rural
+507,makimae,5,shefa,2,rural
+508,nguna,5,shefa,2,rural
+509,emau,5,shefa,2,rural
+510,malorua,5,shefa,2,rural
+511,north efate,5,shefa,2,rural
+512,mele,5,shefa,2,rural
+513,port vila,5,shefa,1,urban
+514,ifira,5,shefa,2,rural
+515,pango,5,shefa,2,rural
+516,erakor,5,shefa,2,rural
+517,eratap,5,shefa,2,rural
+518,eton,5,shefa,2,rural
+601,north erromango,6,tafea,2,rural
+602,south erromango,6,tafea,2,rural
+603,aniwa,6,tafea,2,rural
+604,north tanna,6,tafea,2,rural
+605,west tanna,6,tafea,2,rural
+606,middle bush tanna,6,tafea,2,rural
+607,south west tanna,6,tafea,2,rural
+608,whitesands,6,tafea,2,rural
+609,south tanna,6,tafea,2,rural
+610,futuna,6,tafea,2,rural
+611,aneityum,6,tafea,2,rural

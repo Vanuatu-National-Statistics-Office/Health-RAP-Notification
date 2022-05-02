@@ -1,0 +1,22 @@
+disease_id,disease_symp
+1,Dengue Virus
+2,Zika Virus
+3,Chikungunya Virus
+4,Meningococcal Disease
+5,Diarrhoea ( increase)
+6,Cholera
+7,Pneumonia
+8,Influenza (increase) or associated with Severe respiratory syndrome
+9,Measles/Rubella
+10,Pertusis
+11,Tetanus
+12,Diphtheria
+13,Polio
+14,Typhoid
+15,Malaria
+16,Leptospirosis
+17,Tuberculosis
+18,Leprosy
+19,COVID-19
+20,HIV
+21,Other (specify)
